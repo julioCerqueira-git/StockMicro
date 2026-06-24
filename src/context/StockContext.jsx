@@ -83,10 +83,13 @@ function reducer(state, action) {
 }
 
 export function StockProvider({ children }) {
-  // Initialize with empty data to start the app without seeded products or movements
+  // Load any previously saved data; fall back to empty arrays if none exist
+  const savedProducts = loadProducts();
+  const savedMovements = loadMovements();
+
   const [state, dispatch] = useReducer(reducer, {
-    products: [],
-    movements: [],
+    products: savedProducts ?? [],
+    movements: savedMovements ?? [],
     settings: loadSettings() || INITIAL_SETTINGS,
   });
 
@@ -99,14 +102,7 @@ export function StockProvider({ children }) {
     saveMovements(state.movements);
   }, [state.movements]);
 
-  // On first render, clear any previously stored products/movements to ensure a clean start
-  useEffect(() => {
-    if (state.products.length === 0 && state.movements.length === 0) {
-      saveProducts([]);
-      saveMovements([]);
-    }
-  }, []);
-
+  // Persist settings changes
   useEffect(() => {
     saveSettings(state.settings);
   }, [state.settings]);
