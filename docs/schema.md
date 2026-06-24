@@ -51,7 +51,7 @@
 ```json
 {
   "alertInactivityDays": "number (default: 3)",
-  "lastOpenedAt": "ISO 8601 datetime",
+  "lastOpenedAt": "ISO 8601 datetime (atualizado apenas na criação/edição inicial)",
   "whatsappEnabled": "boolean (default: false)",
   "whatsappNumber": "string (opcional)"
 }
@@ -88,11 +88,11 @@
 |------|-------------------|------------|---------------------------------------|
 | C-01 | `ProductCard`     | P-01, P-02 | Card com nome, quantidade e status    |
 | C-02 | `StockBadge`      | C-01       | Indicador visual: normal/low/critical |
-| C-03 | `MovementForm`    | P-03       | Formulário de entrada/saída           |
+| C-03 | `MovementForm`    | P-03       | Formulário inline dentro de `Movement.jsx` |
 | C-04 | `AlertBanner`     | P-01       | Alerta de estoque baixo/crítico       |
-| C-05 | `QuickActions`    | P-01       | Botões de ação rápida (≤ 3 toques)    |
+| C-05 | `QuickActions`    | P-01       | Botões inline dentro de `Dashboard.jsx` (≤ 3 toques) |
 | C-06 | `NavBar`          | Global     | Navegação inferior mobile             |
-| C-07 | `ProductForm`     | P-05, P-06 | Formulário de cadastro/edição         |
+| C-07 | `ProductForm`     | P-05, P-06 | Implementado como página em `ProductForm.jsx` |
 | C-08 | `MovementItem`    | P-04       | Item individual do histórico          |
 | C-09 | `EmptyState`      | P-02, P-04 | Estado vazio com call-to-action       |
 | C-10 | `WhatsAppExport`  | P-01       | Gerador de mensagem para WhatsApp     |

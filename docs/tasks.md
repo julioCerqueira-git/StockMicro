@@ -13,7 +13,7 @@
 | T-04 | Criar `utils/uuid.js` — gerador de ID          | ✅ Done |
 | T-05 | Criar `utils/storage.js` — helpers localStorage| ✅ Done |
 | T-06 | Criar `utils/formatters.js` — datas e status   | ✅ Done |
-| T-07 | Criar `StockContext.jsx` com Reducer + dados de exemplo | ✅ Done |
+| T-07 | Criar `StockContext.jsx` com Reducer (dados de exemplo omitidos para início limpo) | ✅ Done |
 
 ---
 
@@ -59,18 +59,6 @@
 | T-29 | `vercel.json` — rewrite para SPA                    | ✅ Done |
 | T-30 | `.gitignore` — excluir node_modules e dist          | ✅ Done |
 | T-31 | `README.md` — documentação do projeto               | ✅ Done |
-
----
-
-## Sprint 5 — Deploy
-
-| ID   | Tarefa                                              | Status    |
-|------|-----------------------------------------------------|-----------|
-| T-32 | `npm run build` — build de produção testado         | ✅ Done    |
-| T-33 | Criar repositório público no GitHub                 | ⏳ Pendente|
-| T-34 | Push do código para o GitHub                        | ⏳ Pendente|
-| T-35 | Importar repositório na Vercel                      | ⏳ Pendente|
-| T-36 | Configurar e publicar deploy na Vercel              | ⏳ Pendente|
 
 ---
 
