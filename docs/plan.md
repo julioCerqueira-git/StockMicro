@@ -82,7 +82,7 @@ src/
 ```
 Inicialização do app
   └── loadProducts() / loadMovements() / loadSettings()
-        └── Se vazio → carrega dados de exemplo (onboarding)
+        └── Se vazio → inicia com arrays vazios (estado limpo)
 
 Toda mutação de estado
   └── useEffect([state.products]) → saveProducts()
@@ -105,7 +105,7 @@ Resultado: 100% funcional sem internet
 | Pré-seleção de tipo na URL    | `/move?type=out` abre direto em "Venda"          |
 | Feedback de sucesso (1.5s)    | Confirma ação sem bloquear o fluxo (RNF-06)     |
 | Emoji nos selects de produto  | Torna status visível sem precisar abrir o item   |
-| Dados de exemplo no 1º acesso | Onboarding sem instruções (zero fricção)         |
+| Inicialização com estado limpo| Permite ao usuário cadastrar diretamente sem precisar deletar itens fictícios |
 
 ---
 

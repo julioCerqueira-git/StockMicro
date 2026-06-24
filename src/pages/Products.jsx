@@ -46,14 +46,12 @@ export default function Products() {
           title="Nenhum produto encontrado"
           description={search ? 'Tente outro termo de busca.' : 'Cadastre seu primeiro produto!'}
           action={
-            !search && (
-              <button
-                onClick={() => navigate('/products/new')}
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 font-semibold text-sm transition-colors"
-              >
-                Cadastrar produto
-              </button>
-            )
+            !search
+              ? {
+                  label: 'Cadastrar produto',
+                  onClick: () => navigate('/products/new'),
+                }
+              : null
           }
         />
       ) : (
