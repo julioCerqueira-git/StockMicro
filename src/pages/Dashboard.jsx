@@ -155,8 +155,8 @@ export default function Dashboard() {
 
       {/* Modal de Configurações */}
       {isSettingsOpen && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-end justify-center p-4">
-          <div className="bg-white rounded-t-3xl rounded-b-3xl w-full max-w-md p-6 shadow-xl animate-in slide-in-from-bottom duration-200">
+        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-start justify-end p-4">
+          <div className="bg-white rounded-l-3xl h-full w-full max-w-md p-6 shadow-xl animate-in slide-in-from-right duration-200">
             <div className="flex justify-between items-center mb-5">
               <h2 className="text-lg font-bold text-slate-800">Configurações</h2>
               <button

@@ -8,13 +8,7 @@ import {
 
 const StockContext = createContext(null);
 
-const INITIAL_PRODUCTS = [
-  { id: generateId(), name: 'Arroz 5kg', unit: 'pct', quantity: 10, minStock: 5, category: 'Alimentos', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: generateId(), name: 'Feijão 1kg', unit: 'pct', quantity: 3, minStock: 5, category: 'Alimentos', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: generateId(), name: 'Óleo de Soja', unit: 'un', quantity: 0, minStock: 4, category: 'Alimentos', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: generateId(), name: 'Açúcar 1kg', unit: 'pct', quantity: 8, minStock: 3, category: 'Alimentos', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: generateId(), name: 'Café 500g', unit: 'pct', quantity: 2, minStock: 4, category: 'Bebidas', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-];
+const INITIAL_PRODUCTS = [];
 
 const INITIAL_SETTINGS = {
   alertInactivityDays: 3,
@@ -89,13 +83,14 @@ function reducer(state, action) {
 }
 
 export function StockProvider({ children }) {
-  const savedProducts = loadProducts();
+  // Initialize with empty data to start the app without seeded products or movements
   const [state, dispatch] = useReducer(reducer, {
-    products: savedProducts || INITIAL_PRODUCTS,
-    movements: loadMovements(),
+    products: [],
+    movements: [],
     settings: loadSettings() || INITIAL_SETTINGS,
   });
 
+  // Persist any changes to products and movements
   useEffect(() => {
     saveProducts(state.products);
   }, [state.products]);
@@ -103,6 +98,14 @@ export function StockProvider({ children }) {
   useEffect(() => {
     saveMovements(state.movements);
   }, [state.movements]);
+
+  // On first render, clear any previously stored products/movements to ensure a clean start
+  useEffect(() => {
+    if (state.products.length === 0 && state.movements.length === 0) {
+      saveProducts([]);
+      saveMovements([]);
+    }
+  }, []);
 
   useEffect(() => {
     saveSettings(state.settings);
