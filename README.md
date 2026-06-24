@@ -32,6 +32,16 @@ Sistema de controle de estoque para microempreendedores, desenvolvido com metodo
 - Lucide React
 - localStorage (offline-first)
 
+## 🚀 Atualizações Futuras
+
+Em versões futuras do StockMicro, estão planejadas as seguintes melhorias para garantir maior **segurança** e **confiabilidade** dos dados:
+
+- 🔐 **Autenticação de usuários** — login com controle de acesso por perfil (admin, colaborador).
+- 🗄️ **Banco de dados** — substituição do `localStorage` por um banco de dados real (ex.: PostgreSQL ou Firebase), eliminando o risco de perda de dados ao limpar o cache do navegador e permitindo o acesso de múltiplos dispositivos.
+- ☁️ **Sincronização em nuvem** — dados disponíveis em qualquer dispositivo, com backup automático.
+
+> Atualmente os dados são armazenados no `localStorage` do navegador, o que é suficiente para uso individual e offline. A migração para banco de dados garantirá persistência, segurança e escalabilidade para múltiplos usuários.
+
 ## Como rodar localmente
 
 ```bash

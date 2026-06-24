@@ -8,29 +8,29 @@ export default function History() {
   const { state } = useStock();
   const [filter, setFilter] = useState('all');
 
-  const filtered = state.movements.filter(m => {
+  const filtered = state.movements.filter((m) => {
     if (filter === 'all') return true;
     return m.type === filter;
   });
 
   return (
-    <div className="pb-24 pt-4 px-4 min-h-screen bg-slate-50">
-      <h1 className="text-xl font-bold text-slate-800 mb-4">Histórico</h1>
+    <div className="min-h-screen p-4 md:p-8 max-w-screen-xl">
+      <h1 className="text-2xl font-bold text-slate-800 mb-5">Histórico</h1>
 
       {/* Filtros */}
-      <div className="flex gap-2 mb-4">
+      <div className="flex gap-2 mb-5">
         {[
           { key: 'all', label: 'Todos' },
           { key: 'out', label: 'Saídas' },
           { key: 'in', label: 'Entradas' },
-        ].map(f => (
+        ].map((f) => (
           <button
             key={f.key}
             onClick={() => setFilter(f.key)}
             className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${
               filter === f.key
                 ? 'bg-blue-600 text-white'
-                : 'bg-white text-slate-500 shadow-sm'
+                : 'bg-white text-slate-500 shadow-sm hover:bg-slate-50'
             }`}
           >
             {f.label}
@@ -45,8 +45,8 @@ export default function History() {
           description="Registre entradas e saídas de produtos."
         />
       ) : (
-        <div className="flex flex-col gap-3">
-          {filtered.map(m => (
+        <div className="flex flex-col gap-3 md:grid md:grid-cols-2 xl:grid-cols-3">
+          {filtered.map((m) => (
             <MovementItem key={m.id} movement={m} />
           ))}
         </div>

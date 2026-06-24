@@ -11,16 +11,20 @@ export default function App() {
   return (
     <StockProvider>
       <BrowserRouter>
-        <div className="max-w-md mx-auto relative min-h-screen">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/new" element={<ProductForm />} />
-            <Route path="/products/:id/edit" element={<ProductForm />} />
-            <Route path="/move" element={<Movement />} />
-            <Route path="/history" element={<History />} />
-          </Routes>
+        {/* Layout: sidebar fixa no desktop, bottom bar no mobile */}
+        <div className="flex min-h-screen bg-slate-50">
           <NavBar />
+          {/* md:ml-60 compensa a sidebar de 240px */}
+          <main className="flex-1 md:ml-60 pb-16 md:pb-0 w-0 min-w-0">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/new" element={<ProductForm />} />
+              <Route path="/products/:id/edit" element={<ProductForm />} />
+              <Route path="/move" element={<Movement />} />
+              <Route path="/history" element={<History />} />
+            </Routes>
+          </main>
         </div>
       </BrowserRouter>
     </StockProvider>
