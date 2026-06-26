@@ -4,13 +4,13 @@
 ## 1. Stack Tecnológico
 - Frontend: React 18 (Vite) + JavaScript (JSX)
 - Estilização: Tailwind CSS + Lucide React
-- Armazenamento: localStorage (offline-first)
+- Armazenamento: localStorage
 - Estado global: React Context API + useReducer
 - Deploy: Vercel (free tier)
 - Controle de versão: GitHub
 
 ## 2. Regras Arquiteturais
-- R1: Offline First — funciona sem internet
+- R1: Persistência Local — dados no localStorage
 - R2: Mobile First — layout para 360px+
 - R3: Zero Fricção — ação crítica em ≤ 3 toques
 - R4: Dados Locais — 100% localStorage, sem servidor externo

@@ -11,7 +11,7 @@ Sistema de controle de estoque para microempreendedores, desenvolvido com metodo
 - ✅ Histórico completo de movimentações
 - ✅ Top 5 produtos mais vendidos
 - ✅ Exportação de alertas via WhatsApp
-- ✅ Funciona 100% offline (localStorage)
+- ✅ Armazenamento local (localStorage)
 - ✅ Mobile-first / PWA-ready
 
 ## Metodologia SDD — Spec Kit
@@ -30,7 +30,7 @@ Sistema de controle de estoque para microempreendedores, desenvolvido com metodo
 - Tailwind CSS
 - React Router DOM
 - Lucide React
-- localStorage (offline-first)
+- localStorage
 
 ## 🚀 Atualizações Futuras
 
@@ -40,7 +40,7 @@ Em versões futuras do StockMicro, estão planejadas as seguintes melhorias para
 - 🗄️ **Banco de dados** — substituição do `localStorage` por um banco de dados real (ex.: PostgreSQL ou Firebase), eliminando o risco de perda de dados ao limpar o cache do navegador e permitindo o acesso de múltiplos dispositivos.
 - ☁️ **Sincronização em nuvem** — dados disponíveis em qualquer dispositivo, com backup automático.
 
-> Atualmente os dados são armazenados no `localStorage` do navegador, o que é suficiente para uso individual e offline. A migração para banco de dados garantirá persistência, segurança e escalabilidade para múltiplos usuários.
+> Atualmente os dados são armazenados no `localStorage` do navegador, o que é suficiente para uso individual. A migração para banco de dados garantirá persistência, segurança e escalabilidade para múltiplos usuários.
 
 ## Como rodar localmente
 

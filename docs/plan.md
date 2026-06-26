@@ -6,9 +6,9 @@
 
 ## 1. Requisitos Não Funcionais (RNF)
 
-| ID     | Requisito              | Critério de Aceitação                        |
-|--------|------------------------|----------------------------------------------|
-| RNF-01 | Offline-first          | Funciona sem internet após 1ª abertura        |
+| ID     | Requisito              | Critério de Aceitação                         |
+|--------|------------------------|-----------------------------------------------|
+| RNF-01 | Persistência Local     | Funciona com dados locais                     |
 | RNF-02 | Mobile-first           | Usável em tela de 360px                       |
 | RNF-03 | Performance            | Carrega em < 2s em conexão 3G                 |
 | RNF-04 | Usabilidade (3 toques) | Registrar venda em ≤ 3 interações             |
@@ -77,7 +77,7 @@ src/
 
 ---
 
-## 4. Estratégia Offline (RNF-01 e RNF-05)
+## 4. Estratégia de Dados Locais (RNF-01 e RNF-05)
 
 ```
 Inicialização do app
@@ -89,7 +89,7 @@ Toda mutação de estado
   └── useEffect([state.movements]) → saveMovements()
   └── useEffect([state.settings]) → saveSettings()
 
-Resultado: 100% funcional sem internet
+Resultado: Dados persistidos no localStorage
 ```
 
 ---
